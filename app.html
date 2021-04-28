@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Game Mata Mosquito</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    
+    <!--CHAMANDO MEU ARQUIVO jogo.js-->
+    <script src="jogo.js"></script>
+    
+
+</head>
+    
+    <!--ABAIXO ESTAMOS USANDO O EVENTO 
+    onresize[O evento onresize ocorre quando a janela do navegador é redimensionada.] 
+    E DENTRO DESSE EVENTO ELE RECEBE A FUNÇÃO ajustaTamanhoPalcoJogo() LEMBRANDO QUE 
+    ESSA FUNÇÃO ESTÁ EM OUTRO ARQUIVO QUE É jogo.js E SÓ NESSE ARQUIVO QUE POSSUI
+    A LÓGICO JAVASCRIPT -->
+<body onresize="ajustaTamanhoPalcoJogo()">
+    
+    
+    <div class="painel">
+        <div class="vidas">
+            <img id="v1" src="imagens/coracao_cheio.png" />
+            <img id="v2" src="imagens/coracao_cheio.png" />
+            <img id="v3" src="imagens/coracao_cheio.png" />
+
+        </div>
+        
+        <div class="cronometro">
+            Tempo Restante:<span id="cronometro"></span>
+        </div>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    <!--Aqui abaixo temos essa TAG script para está fazendo a chamada da função posicaoRandomica()-->
+    <script>
+        
+        /*Aqui fizemos a chamada da lógica do cronometro para o nosso tempo ficar dinâmico*/
+        document.getElementById('cronometro').innerHTML = tempo
+
+        var criaMosquito = setInterval(function(){
+            posicaoRandomica()
+        }, criaMosquitoTempo)
+    </script>
+
+</body>
+
+</html>
